@@ -1,0 +1,101 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5em;
+}
+
+#header{
+    width: 100%;
+    margin: 0 auto;
+    height: 250px;
+    line-height: 250px;
+    background: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    color: white;
+}
+
+#header h1{
+    max-width: 1920px;
+    min-width: 1100px;
+    text-align: center;
+    padding: 0 0 0 1em;
+    margin: 0 auto;
+    font-size: 3em;
+}
+
+#wrapper{
+    max-width: 1200px;
+    min-width: 1100px;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.section{
+    padding: 1em;
+}
+
+.section h2{
+    border-left: .4em solid steelblue;
+    padding-left: 7px;
+}
+
+.section-group{
+    margin-bottom: 1em;
+}
+
+.section-group>label{
+    margin-bottom: .25em;
+    display: block;
+    font-weight: bold;
+}
+
+.inputs{
+    display: flex;
+}
+
+.inputs input{
+    display: inline;
+}
+
+.radio-inputs{
+    flex-direction: column
+}
+
+.inputs input[type=number]{
+    margin-left: 30px;
+    display: inline-block;
+}
+
+.checkbox-label, .checkbox-label>*{
+    cursor: pointer;
+}
+
+.button{
+    margin: 0 auto;
+    width: 300px;
+    text-align: center;
+    font-size: 1.75em;
+    background-color: steelblue;
+    border-radius: .3em;
+    padding: .4em .8em;
+    color: white;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: royalblue;
+}
+
+#output{
+    width: 100%;
+    height: 400px;
+}
+
+#help-text{
+    text-align: left;
+}

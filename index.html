@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSGO Config Generator</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/remodal.css">
+        <link rel="stylesheet" href="assets/css/remodal-default-theme.css">
+
+    </head>
+    <body>
+        <div id="header">
+            <h1>CS:GO Config Generator</h1>
+        </div>
+        <div id="wrapper">
+            <div id="left">
+                <div class="section">
+                    <h2>Video</h2>
+                    <div class="section-group">
+                        <label>Brightness</label>
+                        <div class="inputs">
+                            <input name="brightness-slider" type="range" min="1.6" max="2.6" value="2" step=".1" oninput="sliderToTextbox(this)">
+                            <input name="brightness-output" type="number" min="1.6" max="2.6" step=".1" value="2.00" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Mouse</h2>
+                    <div class="section-group">
+                        <label>Sensitivity</label>
+                        <div class="inputs">
+                            <input name="sensitivity-slider" type="range" min="0" max="10" value="2.00" step=".01" oninput="sliderToTextbox(this)">
+                            <input name="sensitivity-output" type="number" max="10" min="0" step=".01" value="2.00" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Zoom Sensitivity</label>
+                        <div class="inputs">
+                            <input name="zoom-sensivity-slider" type="range" min="0" max="10" value="1.00" step=".01" oninput="sliderToTextbox(this)">
+                            <input name="zoom-sensivity-output" type="number"  max="10" min="0" step=".01" value="1.00" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Mouse Acceleration</label>
+                        <div class="inputs">
+                            <input name="acceleration-slider" type="range" min="0" max="10" value="0.00" step=".01" oninput="sliderToTextbox(this)">
+                            <input name="acceleration-output" type="number"  max="10" min="0" step=".01" value="0.00" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Raw Input</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="raw-input-checkbox" type="checkbox" checked="checked"> Use raw mouse input </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>HUD</h2>
+                    <div class="section-group">
+                        <label>HUD Color</label>
+                        <div class="inputs">
+                            <select name="hud-color-select">
+                                <option value="0">Default</option>
+                                <option value="1">White</option>
+                                <option value="2">Light Blue</option>
+                                <option value="3">Dark Blue</option>
+                                <option value="4">Purple</option>
+                                <option value="5">Red</option>
+                                <option value="6">Orange</option>
+                                <option value="7">Yellow</option>
+                                <option value="8">Light Green</option>
+                                <option value="9">Turquoise</option>
+                                <option value="10">Pink</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Show Player Count</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="player-count-checkbox" type="checkbox" checked="checked"> Only show player count</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Player Count Position</label>
+                        <div class="inputs radio-inputs">
+                            <label class="checkbox-label"> <input name="player-count-pos-radio" type="radio" value="0" checked="checked"> Show player count on top</label>
+                            <label class="checkbox-label"> <input name="player-count-pos-radio" type="radio" value="1"> Show player count on bottom</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Clan Tags In Death Notice</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="clan-tag-checkbox" type="checkbox"> Show clan tag in death notices</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Bomb Inventory Location</label>
+                        <div class="inputs radio-inputs">
+                            <label class="checkbox-label"> <input name="show-bomb-radio" type="radio" value="0" checked="checked"> Show bomb in inventory</label>
+                            <label class="checkbox-label"> <input name="show-bomb-radio" type="radio" value="1"> Show bomb under radar</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Health and Ammo Style</label>
+                        <div class="inputs radio-inputs">
+                            <label class="checkbox-label"> <input name="health-ammo-style-radio" type="radio" value="0" checked="checked"> Default style</label>
+                            <label class="checkbox-label"> <input name="health-ammo-style-radio" type="radio" value="1"> Simple style</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="right">
+                <div class="section">
+                    <h2>Audio</h2>
+                    <div class="section-group">
+                        <label>Volume</label>
+                        <div class="inputs">
+                            <input name="volume-slider" type="range" min="0" max="1" value="1" step=".05" oninput="sliderToTextbox(this)">
+                            <input name="volume-output" type="number" max="1.0" min="0" step=".05" value="1.00" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Voice Enable</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="voice-enable-checkbox" type="checkbox" checked="checked"> Enable voice in game </label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Lobby Voice Chat</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="lobby-voice-enable-checkbox" type="checkbox"> Enable voice in lobby </label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Voice Scale</label>
+                        <div class="inputs">
+                            <input name="voice-scale-slider" type="range" min="0" max="1" value="1" step=".05" oninput="sliderToTextbox(this)">
+                            <input name="voice-scale-output" type="number" max="1.0" min="0" step=".05" value="1.00" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label >Music Volume</label>
+                        <div class="inputs">
+                            <input name="music-volume-slider" type="range" min="0" max="1" value="0" step=".05" oninput="sliderToTextbox(this)">
+                            <input name="music-volume-output" type="number" max="1.0" min="0" step=".05" value="0" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Play Audio In Background</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="background-audio-checkbox" type="checkbox" checked="checked"> Play audio when game is minimized</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Gameplay</h2>
+                    <div class="section-group">
+                        <label>Switch Weapon on Pickup</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="switch-weapon-pickup-checkbox" type="checkbox"> Switch weapon on pickup</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Close Buy Menu on Purchase</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="close-buy-menu-checkbox" type="checkbox"> Close buy menu on purchase</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Show Teammate Colors</label>
+                        <div class="inputs radio-inputs">
+                            <label class="checkbox-label"> <input name="show-colors-radio" type="radio" value="0"> No colors</label>
+                            <label class="checkbox-label"> <input name="show-colors-radio" type="radio" value="1" checked="checked"> Show colors</label>
+                            <label class="checkbox-label"> <input name="show-colors-radio" type="radio" value="2"> Show colors and letters</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="button" onclick="generate()" data-remodal-target="modal">
+            Generate Config File
+        </div>
+        <div class="remodal" data-remodal-id="modal">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <h1>Configuration File</h1>
+            <p id="help-text">Copy and paste the text below into a new file, rename it to "autoexec.cfg" and move it into the folder listed below:</p>
+            <pre>C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\cfg</pre>
+            <textarea id="output" onclick="this.focus();this.select()"></textarea>
+            <br>
+            <button data-remodal-action="cancel" class="remodal-cancel" onclick="close();">Close</button>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script src="assets/js/remodal.js"></script>
+        <script type="text/javascript" src="assets/js/index.js"></script>
+    </body>
+</html>
