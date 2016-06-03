@@ -7,6 +7,7 @@ body{
 
 #header{
     width: 100%;
+    min-width: 1100px;
     margin: 0 auto;
     height: 250px;
     line-height: 250px;
@@ -19,11 +20,10 @@ body{
 
 #header h1{
     max-width: 1920px;
-    min-width: 1100px;
     text-align: center;
-    padding: 0 0 0 1em;
     margin: 0 auto;
-    font-size: 3em;
+    font-size: 4em;
+    font-weight: lighter;
 }
 
 #wrapper{
@@ -36,7 +36,7 @@ body{
 }
 
 .section{
-    padding: 1em;
+    padding: 1.5em;
 }
 
 .section h2{
@@ -45,7 +45,7 @@ body{
 }
 
 .section-group{
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .section-group>label{
@@ -67,7 +67,7 @@ body{
 }
 
 .inputs input[type=number]{
-    margin-left: 30px;
+    margin-left: 20px;
     display: inline-block;
 }
 
