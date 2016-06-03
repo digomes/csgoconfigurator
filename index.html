@@ -75,6 +75,26 @@
                         </div>
                     </div>
                     <div class="section-group">
+                        <label>Show Teammate Colors</label>
+                        <div class="inputs radio-inputs">
+                            <label class="checkbox-label"> <input name="show-colors-radio" type="radio" value="0"> No colors</label>
+                            <label class="checkbox-label"> <input name="show-colors-radio" type="radio" value="1" checked="checked"> Show colors</label>
+                            <label class="checkbox-label"> <input name="show-colors-radio" type="radio" value="2"> Show colors and letters</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Preferred Radar Color</label>
+                        <div class="inputs">
+                            <select name="preferred-color-select">
+                                <option value="0">Yellow</option>
+                                <option value="1">Purple</option>
+                                <option value="2">Green</option>
+                                <option value="3">Blue</option>
+                                <option value="4">Orange</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="section-group">
                         <label>Show Player Count</label>
                         <div class="inputs">
                             <label class="checkbox-label"> <input name="player-count-checkbox" type="checkbox" checked="checked"> Only show player count</label>
@@ -105,6 +125,42 @@
                         <div class="inputs radio-inputs">
                             <label class="checkbox-label"> <input name="health-ammo-style-radio" type="radio" value="0" checked="checked"> Default style</label>
                             <label class="checkbox-label"> <input name="health-ammo-style-radio" type="radio" value="1"> Simple style</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Radar</h2>
+                    <div class="section-group">
+                        <label>HUD Radar Scale</label>
+                        <div class="inputs">
+                            <input name="hud-radar-slider" type="range" min=".8" max="1.3" value=".8" step=".01" oninput="sliderToTextbox(this)">
+                            <input name="hud-radar-output" type="number" min=".8" max="1.3" step=".01" value=".8" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Radar Map Scale</label>
+                        <div class="inputs">
+                            <input name="radar-map-slider" type="range" min=".25" max="1" value=".5" step=".01" oninput="sliderToTextbox(this)">
+                            <input name="radar-map-output" type="number" min=".25" max="1" step=".01" value=".5" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Radar Icon Scale</label>
+                        <div class="inputs">
+                            <input name="radar-icon-slider" type="range" min=".4" max="1" value=".8" step=".01" oninput="sliderToTextbox(this)">
+                            <input name="radar-icon-output" type="number" min=".4" max="1" step=".01" value=".8" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Center Radar</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="center-radar-checkbox" type="checkbox"> Always center radar</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Rotate Radar</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="rotate-radar-checkbox" type="checkbox" checked="checked"> Allow radar to rotate</label>
                         </div>
                     </div>
                 </div>
@@ -152,13 +208,31 @@
                             <label class="checkbox-label"> <input name="background-audio-checkbox" type="checkbox" checked="checked"> Play audio when game is minimized</label>
                         </div>
                     </div>
+                    <div class="section-group">
+                        <label>Enhanced Audio</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="enhanced-audio-checkbox" type="checkbox"> Enable enhanced audio</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="section">
                     <h2>Gameplay</h2>
                     <div class="section-group">
+                        <label>Left Handed Viewmodel</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="left-hand-checkbox" type="checkbox"> Use left handed viewmodel</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
                         <label>Switch Weapon on Pickup</label>
                         <div class="inputs">
                             <label class="checkbox-label"> <input name="switch-weapon-pickup-checkbox" type="checkbox"> Switch weapon on pickup</label>
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>Use Key Opens Buy Menu</label>
+                        <div class="inputs">
+                            <label class="checkbox-label"> <input name="use-key-buy-menu-checkbox" type="checkbox"> Use key opens buy menu</label>
                         </div>
                     </div>
                     <div class="section-group">
@@ -167,17 +241,46 @@
                             <label class="checkbox-label"> <input name="close-buy-menu-checkbox" type="checkbox"> Close buy menu on purchase</label>
                         </div>
                     </div>
+                </div>
+                <div class="section">
+                    <h2>Rates</h2>
                     <div class="section-group">
-                        <label>Show Teammate Colors</label>
-                        <div class="inputs radio-inputs">
-                            <label class="checkbox-label"> <input name="show-colors-radio" type="radio" value="0"> No colors</label>
-                            <label class="checkbox-label"> <input name="show-colors-radio" type="radio" value="1" checked="checked"> Show colors</label>
-                            <label class="checkbox-label"> <input name="show-colors-radio" type="radio" value="2"> Show colors and letters</label>
+                        <label>Rate</label>
+                        <div class="inputs">
+                            <input name="rate-slider" type="range" min="500" max="128000" value="128000" step="1" oninput="sliderToTextbox(this)">
+                            <input name="rate-output" type="number" max="128000" min="500" step="1" value="128000" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>cl_cmdrate</label>
+                        <div class="inputs">
+                            <input name="cl_cmdrate-slider" type="range" min="10" max="128" value="128" step="1" oninput="sliderToTextbox(this)">
+                            <input name="cl_cmdrate-output" type="number" max="128" min="10" step="1" value="128" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>cl_updaterate</label>
+                        <div class="inputs">
+                            <input name="cl_updaterate-slider" type="range" min="10" max="128" value="128" step="1" oninput="sliderToTextbox(this)">
+                            <input name="cl_updaterate-output" type="number" max="128" min="10" step="1" value="128" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>cl_interp</label>
+                        <div class="inputs">
+                            <input name="cl_interp-slider" type="range" min="0" max=".5" value="0" step=".01" oninput="sliderToTextbox(this)">
+                            <input name="cl_interp-output" type="number" max=".5" min="0" step=".01" value="0" onchange="textboxToSlider(this)">
+                        </div>
+                    </div>
+                    <div class="section-group">
+                        <label>cl_interp_ratio</label>
+                        <div class="inputs">
+                            <input name="cl_interp_ratio-slider" type="range" min="1" max="2" value="1" step=".01" oninput="sliderToTextbox(this)">
+                            <input name="cl_interp_ratio-output" type="number" max="2" min="1" step=".01" value="1" onchange="textboxToSlider(this)">
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
         <div class="button" onclick="generate()" data-remodal-target="modal">
             Generate Config File
